@@ -1,21 +1,146 @@
-* {
-    box-sizing: border-box;
+:root {
+  --backgroundColor: #fff;
+  --textColor: #000;
 }
-html {
-    font-size: 16px;
+.dark-mode {
+  --backgroundColor: #202c37;
+  --textColor: #fff;
 }
-
+.back-btn-container {
+    max-width: 1200px;
+    margin-inline: auto;
+    margin: 4em auto;
+    background-color: var(--backgroundColor);
+}
 .back-btn {
     padding: 0.375em 1.2em;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
     text-decoration-line: none;
     border-radius: 4px;
+    border: none;
+}
+
+  
+  #loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0; /* Or any color you prefer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's on top */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade out */
+  }
+  
+  .loader {
+    width: 100px; /* Adjust size as needed */
+    height: 10px; /* Adjust thickness as needed */
+    background-color: #3498db; /* Blue color (you can change) */
+    border-radius: 5px; /* Rounded corners */
+    position: relative;
+    overflow: hidden; /* Hide the pseudo-element */
+  }
+  
+  .loader::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #2980b9; /* Darker blue */
+    animation: load 2s linear infinite; /* Animation duration and timing */
+    border-radius: 5px;
+  }
+  
+  @keyframes load {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+.country-details {
+    max-width: 1200px;
+    margin-inline: auto;
+    
 }
 
 .country-details img {
-    width: 400px;
+    width: 500px;
+    height: max-content;
+    box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.2);
 }
 .country-details {
     display: flex;
-    gap: 2em;
+    gap: 5em;
+}
+.country-info {
+    display: flex;
+    gap: 5em;
+}
+.country-info h1 {
+    margin-bottom: 0.5em;
+}
+.country-info p {
+    margin-bottom: 0.5em;
+}
+
+.country-right-info {
+    margin-top: 3.55em;
+}
+.border-countries {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    margin-top: 1.5em;
+    flex-wrap: wrap; 
+}
+.border-countries a {
+    padding: 0.275em 0.5em;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+    text-decoration-line: none;
+    border-radius: 4px;
+    color: var(--textColor);
+}
+
+@media (max-width: 1100px) {
+    .country-details, .country-info {
+        gap: 2em;
+    }
+}
+
+@media (max-width: 1000px) {
+  .country-details img {
+    width: 400px;
+    height: max-content;
+}
+}
+@media (max-width: 900px) {
+  /* .country-details  {
+    flex-direction: column;
+} */
+html {
+  font-size: 14px;
+}
+
+.country-details img {
+  width: 300px;
+  height: max-content;
+}
+}
+@media (max-width: 700px) {
+  .country-details {
+    flex-direction: column;
+    align-items: center;
+  }
+  .country-details img {
+    width: 250px;
+    height: max-content;
+  }
 }

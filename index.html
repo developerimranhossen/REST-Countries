@@ -13,14 +13,46 @@
     <script src="script.js" defer></script>
 </head>
 
-<body>
+<body class="">
     <header>
         <div class="header-content">
-            <h3 class="title">Where in the world?</h3>
-            <p><i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode</p>
+            <a class="title" href="index.html">Where in the world?</a>
+            <button id="theme-switch">
+                <p><i class="fa-regular fa-sun"></i>&nbsp;&nbsp;Light Mode</p>
+                <p><i class="fa-regular fa-moon"></i>
+                </i>&nbsp;&nbsp;Dark Mode</p>
+            </button>
         </div>
     </header>
     <main>
+        <div class="search-and-filter-container">
+            <div class="search-container">
+                <label>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" placeholder="Search for a country..." name="search" id="search" list="mySuggestions">
+                </label>
+                
+                <datalist id="mySuggestions">
+                    <option value="Bangladesh">
+                    <option value="Saudi Arabia">
+                    <option value="Palestine">
+                    <option value="United States">
+                    <option value="United Kingdom">
+                </datalist>
+                
+            </div>
+            
+            <div class="filter-container">
+                <select name="filter" id="filter">
+                    <option hidden value="all">Filter by Region</option>
+                    <option value="africa">Africa</option>
+                    <option value="america">America</option>
+                    <option value="asia">Asia</option>
+                    <option value="europe">Europe</option>
+                    <option value="oceania">Oceania</option>
+                </select>
+            </div>
+        </div>
         <div class="countries-container">
             
         </div>
