@@ -52,11 +52,11 @@ header {
 .header-content button p:first-child {
     display: none;
 }
-.dark .header-content button p:last-child {
+.dark-mode .header-content button p:last-child {
     display: none;
 }
 
-.dark .header-content button p:first-child {
+.dark-mode .header-content button p:first-child {
     display: inline-block;
 }
 
